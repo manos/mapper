@@ -19,12 +19,13 @@
 </style>
 <script>
     var map;
-    var coords = new Object();
-    var markersArray = [];
-    var geocoder = new google.maps.Geocoder();
-    var updating_enabled = true;
-    var url = 'http://localhost:3000';
+        markersArray = [];
+        geocoder = new google.maps.Geocoder();
+        url = 'http://localhost:3000';
+        updating_enabled = true;
+        firstrun = true;
 
+    var coords = {};
     coords.lat = 24;
     coords.lng = -93;
 
@@ -112,16 +113,20 @@
 
             $( "#map_container" ).dialog( "open" );
             map.setCenter(new google.maps.LatLng(coords.lat, coords.lng), 10);
+
             updating_enabled = true;
 
-            // start with some interesting points:
-            plotPoint('dflksdnflknsdlkfvndlskn');
-            plotPoint('dflknsdlkfvndlskn');
-            plotPoint('Portland, OR');
-            plotPoint('San Francisco, CA');
+            if (firstrun) {
+                // start with some interesting points:
+                plotPoint('dflksdnflknsdlkfvndlskn');
+                plotPoint('Portland, OR');
+                plotPoint('San Francisco, CA');
+            }
 
             // then trigger refreshing:
             setTimeout(setTimers, 100);
+
+            firstrun = false;
             return;
         });
 
