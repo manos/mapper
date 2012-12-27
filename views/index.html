@@ -48,7 +48,7 @@
     }
 
     function cleanupOldies() {
-        // remove the oldest point from the map:
+        // remove the oldest points from the map (only keep 10):
         while (markersArray.length > 10) {
             markersArray[0].setMap(null);
             markersArray.shift();
@@ -206,15 +206,6 @@
     <div id="map_container" title="Current Requests">
         <div id="map_canvas" style="width:100%;height:100%;"></div>
     </div>
-
-
-    <script>
-
-
-        //setTimeout(setTimers, 100);
-
-    </script>
-
 
 </body>
 </html>
