@@ -1,6 +1,6 @@
 {
-  "name": "node-geoip",
-  "description": "web service that returns geo data for an IP address",
+  "name": "node-mapper",
+  "description": "streaming service that stores POST data, and displays on a google map.",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
